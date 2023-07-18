@@ -1,2 +1,3 @@
 # Leetcode_-_GFG
-Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)
+***Hi,*** In this repository i will be posting my solutions to various Leetcode & GFG's DSA problems.
+***Thank You***
