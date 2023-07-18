@@ -18,26 +18,25 @@ public:
         queue<TreeNode*> q;
         q.push(root);
         TreeNode* curr;
-        bool flag = false; 
+        bool flag = true; 
         
         while(!q.empty())
         {
             int size = q.size();
-            vector<int> res;
+            vector<int> res(size);
             for(int i = 0;i<size;i++)
             {
                 curr = q.front();
                 if(curr->left != NULL){q.push(curr->left);}
                 if(curr->right != NULL){q.push(curr->right);}
-                res.push_back(curr->val);
+                
+                int index = (flag) ? i : (size - 1 - i);    
+                res[index] = curr->val;
                 
                 q.pop();
             }
-            if(flag == true){
-                    reverse(res.begin(),res.end());
-                    flag = false;
-                }
-                else{flag = true;}
+            flag =! flag;
+            // if flag will be false than it will become true and vice versa
             ans.push_back(res);
         }
         return ans;
