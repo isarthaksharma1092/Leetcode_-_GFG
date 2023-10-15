@@ -6,15 +6,22 @@ using namespace std;
 
 // } Driver Code Ends
 // User function template for C++
-#include<bits/stdc++.h>
 class Solution {
   public:
     // Program for zig-zag conversion of array
+    bool flag = false;
     void zigZag(int arr[], int n) 
     {
-        sort(arr,arr+n);
-        for(int i = 1;i<n-1;i=i+2){
-            swap(arr[i],arr[i+1]);
+        for(int i = 0;i<n-1;i++)
+        {
+            if(flag){
+                if(arr[i]<arr[i+1]) swap(arr[i],arr[i+1]);
+            }
+            else{
+                if(arr[i]>arr[i+1]) swap(arr[i],arr[i+1]);
+            }
+            
+            flag = !flag;
         }
     }
 };
